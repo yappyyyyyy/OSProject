@@ -1,4 +1,4 @@
-![image](https://github.com/yappyyyyyy/OSProject/assets/174022571/bc307801-1ccc-47e7-b151-3ec46ae304fc)# OSProject Running Containers for Application Development
+# OSProject Running Containers for Application Development
 
 Group Name: YCYOS
 
@@ -70,10 +70,7 @@ Team Mates:
 @joeynor ➜ /workspaces/OSProject (main) $ whoami 
 codespace
 ```
-
-
-
-
+![image](https://github.com/yappyyyyyy/OSProject/assets/174022571/bc307801-1ccc-47e7-b151-3ec46ae304fc)
 
 ***Questions:***
 
