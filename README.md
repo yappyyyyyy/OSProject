@@ -381,14 +381,16 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
-2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)***
+-The user and group ('root') on the host virtual machine owns the files produced in ('myroot'). This is because, when mounted to the host disc, any files created by the Docker container are owned by root as it operates as the root user by default. Unless otherwise noted, Docker containers typically run processes as root. Any files generated inside the container will have the ownership attributes of the user operating the container, usually root, when you mount a directory from the host ('myroot') to the container's filesystem ('/root').
+
+3. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
 
 ```
-*** __Fill answer here__.***
+Yes, you can change the permissions of the files to the user codespace using the chown command. The 'chown' is the command used to modify the ownership of the files;'sudo' raises your permissions to allow modifications to files owned by root. As a result, 'codespace' becomes the owner and can carry out operations like commits.
 
 ## You are on your own, create your own static webpage
 
