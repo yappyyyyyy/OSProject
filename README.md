@@ -442,11 +442,20 @@ docker run -itd --net rednet --name c2 busybox sh
 ```
 ***Questions:***
 
-1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** __Fill answer here__.
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** - BusyBox is a software suite that provides several Unix utilities in a single executable file. It is designed to be a small, modular, and efficient set of utilities for use in embedded Linux environments. - Command switch --name:
+The --name switch in Docker is used to assign a specific name to a container. 
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)***
+NETWORK ID     NAME      DRIVER    SCOPE
+f8b7a4c4f782   bridge    bridge    local
+87c24b7e4e8c   host      host      local
+c38e6dbb6452   none      null      local
+e2df568edb3d   bluenet   bridge    local
+a9c384b7e8fc   rednet    bridge    local
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** Bluenet Gateway: 172.18.0.1
+Rednet Gateway: 172.19.0.1
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** c1 (Bluenet): 172.18.0.2
+c2 (Rednet): 172.19.0.2
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** ping: bad address 'c2'
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
