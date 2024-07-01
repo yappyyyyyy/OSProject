@@ -634,10 +634,10 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 1. What is the output of step 5 above, explain the error? ***(1 mark)*** The output of step 5 likely resulted in an error when trying to connect from the Node.js application container (nodejs-container) to the MySQL database container (mysql-container). This error occurred because the two containers are on different Docker networks (nodejsnet for Node.js and mysqlnet for MySQL), and Docker containers on different networks cannot communicate directly with each other by default.
 2. Show the instruction needed to make this work. ***(1 mark)*** To make the setup work, you need to bridge the two Docker networks (nodejsnet and mysqlnet) together so that containers from one network can communicate with containers in the other network. 
-1. Create a Bridge Network.
-2. Connect Containers to the Bridge Network.
-3. Verify Connectivity.
-4. Update Node.js Application Configuration.
+   1. Create a Bridge Network.
+   2. Connect Containers to the Bridge Network.
+   3. Verify Connectivity.
+   4. Update Node.js Application Configuration.
 
 
 ## What to submit
